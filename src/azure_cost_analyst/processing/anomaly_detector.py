@@ -106,7 +106,7 @@ class AnomalyDetector:
 
         Args:
             daily_costs: List of dicts returned by
-                :meth:`~src.azure_cost_analyst.cost_client.AzureCostClient.get_daily_costs`.
+                :meth:`~src.azure_cost_analyst.api.cost_client.AzureCostClient.get_daily_costs`.
 
         Returns:
             :class:`AnomalyReport` with all detected anomalies and summary

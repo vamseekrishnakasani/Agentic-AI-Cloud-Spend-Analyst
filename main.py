@@ -3,7 +3,7 @@
 import sys
 
 from src.azure_cost_analyst.config import AppConfig, setup_logging
-from src.azure_cost_analyst.orchestrator import CostAnalystOrchestrator
+from src.azure_cost_analyst.agents.orchestrator import CostAnalystOrchestrator
 
 logger = setup_logging(__name__)
 

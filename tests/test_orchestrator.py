@@ -4,9 +4,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.azure_cost_analyst.anomaly_detector import AnomalyDetector, AnomalyReport
+from src.azure_cost_analyst.processing.anomaly_detector import AnomalyDetector, AnomalyReport
 from src.azure_cost_analyst.config import AppConfig, AzureConfig
-from src.azure_cost_analyst.orchestrator import CostAnalystOrchestrator, OrchestratorResult
+from src.azure_cost_analyst.agents.orchestrator import CostAnalystOrchestrator, OrchestratorResult
 
 
 def _make_config(with_openai: bool = False) -> AppConfig:

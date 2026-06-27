@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from src.azure_cost_analyst.config import AzureConfig
-from src.azure_cost_analyst.cost_client import AzureCostClient
+from src.azure_cost_analyst.api.cost_client import AzureCostClient
 
 
 def _make_config(**kwargs) -> AzureConfig:
@@ -48,8 +48,8 @@ class TestAzureConfigValidate:
 
 
 class TestAzureCostClientInit:
-    @patch("src.azure_cost_analyst.cost_client.CostManagementClient")
-    @patch("src.azure_cost_analyst.cost_client.ClientSecretCredential")
+    @patch("src.azure_cost_analyst.api.cost_client.CostManagementClient")
+    @patch("src.azure_cost_analyst.api.cost_client.ClientSecretCredential")
     def test_init_success(self, mock_cred, mock_client):
         config = _make_config()
         client = AzureCostClient(config=config)
@@ -67,8 +67,8 @@ class TestAzureCostClientInit:
 
 
 class TestGetDailyCosts:
-    @patch("src.azure_cost_analyst.cost_client.CostManagementClient")
-    @patch("src.azure_cost_analyst.cost_client.ClientSecretCredential")
+    @patch("src.azure_cost_analyst.api.cost_client.CostManagementClient")
+    @patch("src.azure_cost_analyst.api.cost_client.ClientSecretCredential")
     def test_returns_list_of_dicts(self, _mock_cred, mock_client_cls):
         rows = [[100.0, "2024-01-01", "USD"], [200.0, "2024-01-02", "USD"]]
         columns = ["PreTaxCost", "Date", "Currency"]
@@ -85,8 +85,8 @@ class TestGetDailyCosts:
         assert result[0]["PreTaxCost"] == 100.0
         assert result[0]["Date"] == "2024-01-01"
 
-    @patch("src.azure_cost_analyst.cost_client.CostManagementClient")
-    @patch("src.azure_cost_analyst.cost_client.ClientSecretCredential")
+    @patch("src.azure_cost_analyst.api.cost_client.CostManagementClient")
+    @patch("src.azure_cost_analyst.api.cost_client.ClientSecretCredential")
     def test_azure_error_raises_runtime_error(self, _mock_cred, mock_client_cls):
         from azure.core.exceptions import AzureError
 
@@ -100,8 +100,8 @@ class TestGetDailyCosts:
 
 
 class TestGetCostByService:
-    @patch("src.azure_cost_analyst.cost_client.CostManagementClient")
-    @patch("src.azure_cost_analyst.cost_client.ClientSecretCredential")
+    @patch("src.azure_cost_analyst.api.cost_client.CostManagementClient")
+    @patch("src.azure_cost_analyst.api.cost_client.ClientSecretCredential")
     def test_returns_service_records(self, _mock_cred, mock_client_cls):
         rows = [[500.0, "Compute", "USD"], [200.0, "Storage", "USD"]]
         columns = ["PreTaxCost", "ServiceName", "Currency"]
