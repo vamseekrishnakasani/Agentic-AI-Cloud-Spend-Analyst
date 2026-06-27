@@ -1,0 +1,26 @@
+# Azure Cost Analyst - Core dependencies
+azure-mgmt-costmanagement==4.0.1
+azure-identity==1.19.0
+azure-mgmt-core==1.4.0
+
+# LangGraph for agent orchestration
+langgraph==0.2.65
+langchain==0.3.13
+langchain-core==0.3.28
+langchain-openai==0.2.14
+
+# Statistical analysis for anomaly detection
+numpy==2.2.1
+scipy==1.15.0
+pandas==2.2.3
+scikit-learn==1.6.0
+
+# HTTP client
+requests==2.32.3
+
+# Configuration management
+python-dotenv==1.0.1
+
+# Testing
+pytest==8.3.4
+pytest-mock==3.14.0
