@@ -8,10 +8,10 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 
-from src.azure_cost_analyst.agents.state import AgentState
-from src.azure_cost_analyst.processing.anomaly_detector import AnomalyDetector, AnomalyReport
-from src.azure_cost_analyst.api.cost_client import AzureCostClient
-from src.azure_cost_analyst.config import AppConfig, setup_logging
+from src.agents.state import AgentState
+from src.processing.anomaly_detector import AnomalyDetector, AnomalyReport
+from src.api.cost_client import AzureCostClient
+from src.config import AppConfig, setup_logging
 
 logger = setup_logging(__name__)
 

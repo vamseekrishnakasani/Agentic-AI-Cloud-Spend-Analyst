@@ -3,7 +3,7 @@
 from typing import Any, Dict, List, Optional
 from typing_extensions import TypedDict
 
-from src.azure_cost_analyst.processing.anomaly_detector import AnomalyReport
+from src.processing.anomaly_detector import AnomalyReport
 
 
 class AgentState(TypedDict):

@@ -2,7 +2,7 @@
 
 import pytest
 
-from src.azure_cost_analyst.processing.anomaly_detector import AnomalyDetector, AnomalyReport
+from src.processing.anomaly_detector import AnomalyDetector, AnomalyReport
 
 
 def _make_records(costs, dates=None):

@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional
 
 import numpy as np
 
-from src.azure_cost_analyst.config import setup_logging
+from src.config import setup_logging
 
 logger = setup_logging(__name__)
 
@@ -106,7 +106,7 @@ class AnomalyDetector:
 
         Args:
             daily_costs: List of dicts returned by
-                :meth:`~src.azure_cost_analyst.api.cost_client.AzureCostClient.get_daily_costs`.
+                :meth:`~src.api.cost_client.AzureCostClient.get_daily_costs`.
 
         Returns:
             :class:`AnomalyReport` with all detected anomalies and summary

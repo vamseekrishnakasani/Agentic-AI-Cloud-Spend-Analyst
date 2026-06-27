@@ -1,7 +1,7 @@
 """Agent building and LangGraph orchestration subpackage."""
 
-from src.azure_cost_analyst.agents.state import AgentState
-from src.azure_cost_analyst.agents.orchestrator import (
+from src.agents.state import AgentState
+from src.agents.orchestrator import (
     CostAnalystOrchestrator,
     OrchestratorResult,
 )

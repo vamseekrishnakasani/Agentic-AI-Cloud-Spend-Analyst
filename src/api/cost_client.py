@@ -20,7 +20,7 @@ from azure.mgmt.costmanagement.models import (
 )
 from azure.core.exceptions import AzureError
 
-from src.azure_cost_analyst.config import AzureConfig, setup_logging
+from src.config import AzureConfig, setup_logging
 
 logger = setup_logging(__name__)
 
@@ -33,7 +33,7 @@ class AzureCostClient:
     resource-group spending.
 
     Args:
-        config: :class:`~src.azure_cost_analyst.config.AzureConfig` instance
+        config: :class:`~src.config.AzureConfig` instance
             holding Azure credentials.  If *None* the config is built from
             environment variables.
 
